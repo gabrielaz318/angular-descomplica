@@ -13,6 +13,20 @@
       "email": "marliazevedo318@gmail.com",
       "phone": "5547991898888",
       "password": "123456789"
+    },
+    {
+      "id": 3,
+      "name": "teste",
+      "email": "teste@teste.com",
+      "phone": "6546546546",
+      "password": "1321244654"
+    },
+    {
+      "id": 4,
+      "name": "teste",
+      "email": "teste@teste.com",
+      "phone": "6546546546",
+      "password": "1321244654"
     }
   ]
 }

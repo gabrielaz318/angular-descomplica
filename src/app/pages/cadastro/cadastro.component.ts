@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { GenericValidador } from 'src/app/common/validador';
 import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { User } from 'src/app/models/user';
 })
 export class CadastroComponent {
   user: User = new User();
+
+  constructor(private service: UserService) {}
 
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
@@ -45,15 +48,22 @@ export class CadastroComponent {
 
 
   onSubmit(): void {
-    this.user.id = new Date().getTime();
     this.user.name = this.addressForm.controls['name'].value || '';
     this.user.email = this.addressForm.controls['email'].value || '';
     this.user.password = this.addressForm.controls['password'].value || '';
     this.user.phone = this.addressForm.controls['phone'].value || '';
 
-    alert('Você cadasatrou');
-
-    console.log(this.user)
     localStorage.setItem('user', JSON.stringify(this.user));
+
+    this.service.addUser(this.user).subscribe({
+      next: (response) => {
+        console.log(response);
+        alert('Você cadasatrou');
+      },
+      error: (error) => {
+        console.log(error)
+        alert('Erro ao cadastrar');
+      }
+    })
   }
 }

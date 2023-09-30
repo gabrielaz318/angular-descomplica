@@ -30,6 +30,7 @@ import { PrivadoComponent } from './pages/privado/privado.component';
 import { DetalheComponent } from './pages/detalhe/detalhe.component';
 import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { EditarComponent } from './pages/editar/editar.component';
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
