@@ -15,6 +15,14 @@
         </div>
         <div class="col">
           <mat-form-field class="full-width">
+            <input matInput placeholder="Exemplo" formControlName="desc">
+            <mat-error *ngIf="addressForm.controls['desc'].hasError('required')">
+              Nome é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
             <input matInput placeholder="E-mail" formControlName="email">
             <mat-error *ngIf="email.invalid">
               {{getErrorMessage()}}
