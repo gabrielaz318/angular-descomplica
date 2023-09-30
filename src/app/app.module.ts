@@ -28,6 +28,7 @@ import { Page1Component } from './pages/sub-route/page1/page1.component';
 import { Page2Component } from './pages/sub-route/page2/page2.component';
 import { PrivadoComponent } from './pages/privado/privado.component';
 import { DetalheComponent } from './pages/detalhe/detalhe.component';
+import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DetalheComponent } from './pages/detalhe/detalhe.component';
     Page1Component,
     Page2Component,
     PrivadoComponent,
-    DetalheComponent
+    DetalheComponent,
+    ListaSimplesComponent
   ],
   imports: [
     BrowserModule,
