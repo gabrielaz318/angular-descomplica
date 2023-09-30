@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'listar', component: ListarComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'login', component: ManipulandoJsonComponent },
-  { path: 'json', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'json', component: ManipulandoJsonComponent }
 ];
 
 @NgModule({
