@@ -1,0 +1,48 @@
+<form class="formCadastro" [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Cadastro</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nome" formControlName="name">
+            <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+              Nome é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="E-mail" formControlName="email">
+            <mat-error *ngIf="email.invalid">
+              {{getErrorMessage()}}
+             </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Telefone" formControlName="phone">
+            <mat-error *ngIf="addressForm.controls['phone'].hasError('required')">
+              Telefone é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Senha" type="password" formControlName="password">
+          <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
+            Senha é <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [disabled]="!addressForm.valid" color="primary" type="submit">Cadastrar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -5,28 +5,36 @@ import { User } from 'src/app/models/user';
 
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  selector: 'app-editar',
+  templateUrl: './editar.component.html',
+  styleUrls: ['./editar.component.css']
 })
-export class CadastroComponent {
+export class EditarComponent {
   user: User = new User();
+  addressForm: any;
+  email: any;
 
   private fb = inject(FormBuilder);
-  addressForm = this.fb.group({
-    name: [null, Validators.required],
-    email: [null, Validators.compose([
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(64),
-        Validators.email
-      ])
-    ],
-    phone: [null, Validators.required],
-    password: [null, Validators.required]
-  });
 
-  email = this.addressForm.controls['email'];
+  constructor() {
+    if(localStorage.getItem('user')) {
+      this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    }
+    this.addressForm = this.fb.group({
+      name: [this.user.name, Validators.required],
+      email: [this.user.email, Validators.compose([
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(64),
+          Validators.email
+        ])
+      ],
+      phone: [this.user.phone, Validators.required],
+      password: [null, Validators.required]
+    });
+    this.email = this.addressForm.controls['email'];
+  }
+
 
   getErrorMessage() {
     if(this.email.hasError('required')) {
