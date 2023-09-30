@@ -10,6 +10,7 @@ import { Page1Component } from './pages/sub-route/page1/page1.component';
 import { Page2Component } from './pages/sub-route/page2/page2.component';
 import { PrivadoComponent } from './pages/privado/privado.component';
 import { AutorizadoGuard } from './guards/autorizado.guard';
+import { DetalheComponent } from './pages/detalhe/detalhe.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'json', component: ManipulandoJsonComponent },
+  { path: 'detalhe/:id', component: DetalheComponent },
   { path: 'subroute', component: SubRouteComponent,
     children: [
       { path: 'page1', component: Page1Component },

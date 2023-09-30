@@ -8,6 +8,7 @@
         <th>Nome</th>
         <th>E-mail</th>
         <th>Sexo</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,9 @@
         <td>{{student.name}}</td>
         <td>{{student.email}}</td>
         <td>{{student.gender}}</td>
+        <td>
+          <button mat-button (click)="goToDetail(student)">Ir para detalhe</button>
+        </td>
       </tr>
     </tbody>
   </table>
