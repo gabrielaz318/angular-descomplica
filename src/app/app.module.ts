@@ -23,6 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ManipulandoJsonComponent } from './pages/manipulando-json/manipulando-json.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SubRouteComponent } from './pages/sub-route/sub-route.component';
+import { Page1Component } from './pages/sub-route/page1/page1.component';
+import { Page2Component } from './pages/sub-route/page2/page2.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroComponent,
     LoginComponent,
     MainComponent,
-    ManipulandoJsonComponent
+    ManipulandoJsonComponent,
+    SubRouteComponent,
+    Page1Component,
+    Page2Component
   ],
   imports: [
     BrowserModule,
