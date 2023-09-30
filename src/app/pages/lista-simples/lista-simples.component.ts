@@ -33,6 +33,6 @@ export class ListaSimplesComponent {
   }
 
   goToDetail(user: User) {
-    this.router.navigate(['detalhe', user.id]);
+    this.router.navigate(['detalhe', user.id, user.phone]);
   }
 }

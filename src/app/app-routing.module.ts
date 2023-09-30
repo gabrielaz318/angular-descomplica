@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'json', component: ManipulandoJsonComponent },
-  { path: 'detalhe/:id', component: DetalheComponent },
+  { path: 'detalhe/:id/:phone', component: DetalheComponent },
   { path: 'lista-simples', component: ListaSimplesComponent },
   { path: 'subroute', component: SubRouteComponent,
     children: [
