@@ -22,6 +22,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ManipulandoJsonComponent } from './pages/manipulando-json/manipulando-json.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ManipulandoJsonComponent } from './pages/manipulando-json/manipulando-j
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatSidenavModule,
