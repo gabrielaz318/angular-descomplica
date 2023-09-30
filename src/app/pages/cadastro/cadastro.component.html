@@ -15,14 +15,6 @@
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Exemplo" formControlName="desc">
-            <mat-error *ngIf="addressForm.controls['desc'].hasError('required')">
-              Nome é <strong>obrigatório</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
             <input matInput placeholder="E-mail" formControlName="email">
             <mat-error *ngIf="email.invalid">
               {{getErrorMessage()}}
@@ -36,6 +28,14 @@
             <input matInput placeholder="Telefone" formControlName="phone">
             <mat-error *ngIf="addressForm.controls['phone'].hasError('required')">
               Telefone é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="CPF" formControlName="cpf">
+            <mat-error *ngIf="addressForm.controls['cpf'].hasError('required')">
+              CPF é <strong>obrigatório</strong>
             </mat-error>
           </mat-form-field>
         </div>

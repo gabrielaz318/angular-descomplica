@@ -22,12 +22,7 @@ export class CadastroComponent {
         Validators.email
       ])
     ],
-    desc: [null, Validators.compose([
-        Validators.minLength(10),
-        Validators.maxLength(64),
-        Validators.max(40)
-      ])
-    ],
+    cpf: [null, Validators.required],
     phone: [null, Validators.required],
     password: [null, Validators.required]
   });
