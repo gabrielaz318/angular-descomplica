@@ -11,16 +11,13 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class CadastroComponent {
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
-    id: '',
-    firstName: [null, Validators.required],
+    name: [null, Validators.required],
     email: [null, Validators.required],
     phone: [null, Validators.required],
     password: [null, Validators.required]
   });
 
-  hasUnitNumber = false;
-
   onSubmit(): void {
-    alert('Thanks!');
+    alert('Entrou no onSubmit');
   }
 }

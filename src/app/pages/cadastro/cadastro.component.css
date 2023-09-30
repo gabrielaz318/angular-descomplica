@@ -12,6 +12,10 @@
   margin: 5px 0;
 }
 
+.formCadastro {
+  margin: 30px;
+}
+
 .row {
   display: flex;
   flex-direction: row;

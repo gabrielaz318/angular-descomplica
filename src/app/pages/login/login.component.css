@@ -12,6 +12,11 @@
   margin: 5px 0;
 }
 
+.formLogin {
+  margin: 30px;
+  max-width: 600px;
+}
+
 .row {
   display: flex;
   flex-direction: row;
