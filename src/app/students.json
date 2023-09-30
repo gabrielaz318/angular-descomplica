@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Gabriel Azevedo",
+    "email": "gabrielazevedo318@gmail.com",
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "name": "Isadora Azevedo",
+    "email": "isadoraazevedo318@gmail.com",
+    "gender": "female"
+  },
+  {
+    "id": 3,
+    "name": "Marli David de Souza Azevedo",
+    "email": "marliazevedo318@gmail.com",
+    "gender": "female"
+  },
+  {
+    "id": 4,
+    "name": "Ivair Santos Azevedo",
+    "email": "ivairazevedo318@gmail.com",
+    "gender": "male"
+  }
+]
