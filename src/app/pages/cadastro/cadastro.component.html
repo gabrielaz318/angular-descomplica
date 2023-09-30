@@ -37,6 +37,17 @@
             <mat-error *ngIf="addressForm.controls['cpf'].hasError('required')">
               CPF é <strong>obrigatório</strong>
             </mat-error>
+            <mat-error *ngIf="addressForm.controls['cpf'].getError('cpfNotValid')">
+              CPF não é <strong>válido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="CNPJ" formControlName="cnpj">
+            <mat-error *ngIf="addressForm.controls['cnpj'].hasError('required')">
+              CNPJ é <strong>obrigatório</strong>
+            </mat-error>
           </mat-form-field>
         </div>
       </div>
