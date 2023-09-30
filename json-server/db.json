@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gabriel Azevedo",
+      "email": "gabrielazevedo318@gmail.com",
+      "phone": "5547991899999",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Marli Azevedo",
+      "email": "marliazevedo318@gmail.com",
+      "phone": "5547991898888",
+      "password": "123456789"
+    }
+  ]
+}
