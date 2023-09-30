@@ -8,6 +8,8 @@ import { ManipulandoJsonComponent } from './pages/manipulando-json/manipulando-j
 import { SubRouteComponent } from './pages/sub-route/sub-route.component';
 import { Page1Component } from './pages/sub-route/page1/page1.component';
 import { Page2Component } from './pages/sub-route/page2/page2.component';
+import { PrivadoComponent } from './pages/privado/privado.component';
+import { AutorizadoGuard } from './guards/autorizado.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +23,10 @@ const routes: Routes = [
       { path: 'page1', component: Page1Component },
       { path: 'page2', component: Page2Component }
     ]
-  }
+  },
+  { path: 'privado', component: PrivadoComponent,
+    canActivate: [AutorizadoGuard]
+  },
 ];
 
 @NgModule({
