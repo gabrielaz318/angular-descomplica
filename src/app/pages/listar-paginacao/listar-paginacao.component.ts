@@ -18,7 +18,7 @@ export class ListarPaginacaoComponent implements AfterViewInit {
   @ViewChild(MatTable, { static: false }) table!: MatTable<User>;
   dataSource = new MatTableDataSource<User>([]);
 
-  constructor(private router: Router, public service: UserService) {}
+  constructor(public service: UserService) {}
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name', 'email', 'phone', 'dateBirth'];
