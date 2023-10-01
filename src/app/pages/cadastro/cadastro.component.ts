@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent {
   user: User = new User();
@@ -19,6 +19,7 @@ export class CadastroComponent {
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
     name: [null, Validators.required],
+    dataNascimento: [null, Validators.required],
     email: [null, Validators.compose([
         Validators.required,
         Validators.minLength(10),
@@ -52,6 +53,7 @@ export class CadastroComponent {
     this.user.email = this.addressForm.controls['email'].value || '';
     this.user.password = this.addressForm.controls['password'].value || '';
     this.user.phone = this.addressForm.controls['phone'].value || '';
+    this.user.dateBirth = this.addressForm.controls['dataNascimento'].value || '';
 
     localStorage.setItem('user', JSON.stringify(this.user));
 

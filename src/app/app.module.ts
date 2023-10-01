@@ -31,6 +31,14 @@ import { DetalheComponent } from './pages/detalhe/detalhe.component';
 import { ListaSimplesComponent } from './pages/lista-simples/lista-simples.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { UserService } from './services/user.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+import { DialogContentExampleDialog, ModalComponent } from './pages/modal/modal.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -49,10 +57,14 @@ import { UserService } from './services/user.service';
     PrivadoComponent,
     DetalheComponent,
     ListaSimplesComponent,
-    EditarComponent
+    EditarComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -65,7 +77,11 @@ import { UserService } from './services/user.service';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatBottomSheetModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
