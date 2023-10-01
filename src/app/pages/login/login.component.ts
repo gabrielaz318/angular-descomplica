@@ -2,6 +2,7 @@ import { AutorizacaoService } from './../../services/autorizacao.service';
 import { Component, inject } from '@angular/core';
 
 import { FormBuilder, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -24,6 +25,11 @@ export class LoginComponent {
 
   email = this.addressForm.controls['email'];
 
+  constructor(
+    private service: UserService,
+    private AutorizacaoService: AutorizacaoService
+  ) {}
+
   getErrorMessage() {
     if(this.email.hasError('required')) {
       return 'O e-mail é obrigatório!';
@@ -32,20 +38,28 @@ export class LoginComponent {
     return this.email.hasError('email') ? 'Você deve preecher o e-mail com um valor válido' : '';
   }
 
-  constructor(
-    private AutorizacaoService: AutorizacaoService
-  ) {}
+  // loginClick() {
+  //   if(this.AutorizacaoService.obterLoginStatus()) {
+  //     this.AutorizacaoService.deslogar();
+  //   } else {
+  //     this.AutorizacaoService.autorizar("token:gerador");
+  //   }
+  // }
 
-  loginClick() {
+  onSubmit(): void {
     if(this.AutorizacaoService.obterLoginStatus()) {
       this.AutorizacaoService.deslogar();
     } else {
-      this.AutorizacaoService.autorizar("token:gerador");
+      // this.AutorizacaoService.autorizar("token:gerador");
+      this.service.login({ user: '' }).subscribe({
+        next: (response) => {
+          console.log(response)
+        },
+        error: (erro) => {
+          console.log(erro);
+          alert('Houve um erro ao logar!');
+        }
+      })
     }
-  }
-
-  onSubmit(): void {
-    this.loginClick();
-    alert('Thanks!');
   }
 }
