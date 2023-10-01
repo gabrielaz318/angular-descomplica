@@ -53,7 +53,11 @@ export class LoginComponent {
       // this.AutorizacaoService.autorizar("token:gerador");
       this.service.login({ user: '' }).subscribe({
         next: (response) => {
-          console.log(response)
+          console.log(response.idToken)
+          if(response.idToken) {
+            this.AutorizacaoService.autorizar(response.idToken);
+          }
+
         },
         error: (erro) => {
           console.log(erro);
