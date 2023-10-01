@@ -51,11 +51,12 @@ export class LoginComponent {
       this.AutorizacaoService.deslogar();
     } else {
       // this.AutorizacaoService.autorizar("token:gerador");
-      this.service.login({ user: '' }).subscribe({
+      this.service.login(this.addressForm.value).subscribe({
         next: (response) => {
           console.log(response.idToken)
           if(response.idToken) {
             this.AutorizacaoService.autorizar(response.idToken);
+            alert('Logado!')
           }
 
         },
